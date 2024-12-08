@@ -252,7 +252,29 @@
     border: 5px solid #e27610;
     font-weight: bold;
     border-radius: 10px;
+    padding: 10px;
+  }
+
+  .tip-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 220px;
+    height: flex;
+    top: 300px;
+    margin-right: 20px;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    color: #be771a;
+    font-weight: bold;
+    border-radius: 10px;
     padding: 8px;
+    box-shadow: 3px 3px 2px rgba(255, 153, 0, 0.514); 
+    transform: translateZ(-10px);
+    position: relative;
+    z-index: 1;
   }
 
   .intro {
@@ -309,7 +331,8 @@
     margin-top: 0;
     width: 280px;
     border-radius: 15px;
-    position: relative;
+    position: absolute;
+    z-index: 10;
     text-align: left;
     padding: 15px;
   }
@@ -319,9 +342,11 @@
     flex-direction: column;
     margin-right: 19px;
     margin-top: 10px;
+    top: 460px;
     width: 280px;
     border-radius: 15px;
-    position: relative;
+    position: absolute;
+    z-index: 10;
     text-align: left;
     padding: 15px;
     background-color: #f8e0d2;
@@ -332,6 +357,8 @@
   .fake-site-image {
     width: 900px;
     height: auto;
+    margin-left: 40px;
+    margin-right: -50px;
   }
 
   .highlight-ssl {
@@ -348,7 +375,7 @@
   .icon-button {
     position: absolute;
     top: 60px; 
-    right: 768px;
+    right: 718px;
     width: 30px;
     height: 20px;
     z-index: 1000;
