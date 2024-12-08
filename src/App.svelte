@@ -108,6 +108,62 @@
         </div>
       </div><!-- donate-bait -->
     </div> <!-- info-row -->
+    <div class="content">
+      <div class="column">
+        {#if !showView}
+          <div class="scam-checklist">
+            <h3 class = "scam-title" style="background-color: #fca452; text-align: center;">
+              Clues that a Website is a Scam
+            </h3>
+            <table class="scam-clues">
+              {#each buttonTexts as text, index}
+              <tr>
+                <td>
+                  <SelectButton 
+                    buttonColor={'#ffe2d6'} 
+                    isSelected={selectedClue === index} 
+                    on:slide={handleView}
+                    onClick={() => toggleSelection(index)}
+                  >
+                    {text}
+                  </SelectButton>
+                </td>
+              </tr>
+            {/each}
+            </table>
+          </div> <!-- scam-checklist -->
+        {/if}
+        
+        {#if showView}
+          <div class="scam-info"> 
+            <button class="back-button" on:click={handleBack}>
+              <img src="/backButton.png" alt="back-icon" class="go-back">
+            </button>
+            {#if selectedClue===0} <!-- URL Mispelling -->
+              <div class="container">
+                <div class="highlight-misspell"></div>
+                <h3 class = "scam-title" style="background-color: #e74d00;">
+                  {buttonTexts[selectedClue]}
+                </h3>
+                <ul style="margin-top:1px;">
+                  <li>
+                    Keep an eye out for even the smallest of misspellings, especially when 
+                    they replace letters with numbers or symbols.
+                    <ul>
+                      <li>Example: app1e</li>
+                    </ul>
+                  </li>
+                  <li>Missing 's' in 'https'</li>
+                  <li>Look at the end of the website name for anything extra after the website name</li>
+                  <li>
+                    Suspiciously short links
+                    <ul>
+                      <li>bit.ly and tinyurl are infamous</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            {/if}
 
     <div class="content">
       {#if !showView}

@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #dff8fc;
+  color: rgba(248, 250, 228, 0.87);
+  background-color: #966701;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,6 +13,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  color: #014c8a;
+  justify-content: flex-start;
+  background-color: #fdf6e4;
+  align-items: center;
+  height: 1250px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 10px auto;
+  border-radius: 20px;
+}
 
 a {
   font-weight: 500;
