@@ -208,7 +208,7 @@
           <p class="close-top" style="margin-top: 0px; padding: 5px;">
             Immediately hold the power button until PC fully shuts down. 
           </p>
-          <p class="close-top" style="margin-top: -10px; padding: 5px; color: #dc1111;">
+          <p class="red-title" style="padding: 5px;">
             IGNORE ANY MESSAGES ON SCREEN ASKING YOU NOT TO!!!
           </p>
         </div> <!-- tip-column -->
