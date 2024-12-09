@@ -164,11 +164,11 @@
               {#if !SSLshow}
                 {showPopup()}
               {/if}
-              
               <h3 class = "scam-title" style="background-color: #e74d00; margin-bottom: 1px;">
                 {buttonTexts[selectedClue]}
               </h3>
               <div class="highlight-ssl"></div>
+              <div class="highlight-ssl-2"></div>
               <ul>
                 <li>SSL is method that websites can use to by walling it off</li>
                 <li>Usually located to the left of the link as a symbol
@@ -184,6 +184,8 @@
               <h3 class = "scam-title" style="background-color: #e74d00; margin-bottom: 1px;">
                 {buttonTexts[selectedClue]}
               </h3>
+              <div class="highlight-p-1"></div>
+              <div class="highlight-p-2"></div>
               <ul>
                 <li>
                   Repetition is a big weapon by online scams and even used by ads 
@@ -349,17 +351,6 @@
     height: auto;
   }
 
-  .highlight-ssl {
-    position: absolute;
-    border: 1px solid rgb(255, 102, 0);
-    background-color: rgba(255, 115, 0, 0.2);
-    top: 135px; 
-    left: 419px; 
-    width: 365px; 
-    height: 90px;
-    z-index: 1000;
-  }
-
   .icon-button {
     position: absolute;
     top: 60px; 
@@ -429,17 +420,6 @@
   .go-back {
     width: 40px;
     height: flex;
-  }
-
-  .highlight-misspell {
-    position: absolute;
-    z-index: 1000;
-    border: 1px solid rgb(255, 102, 0);
-    background-color: rgba(255, 115, 0, 0.2);
-    top: 67.8px; 
-    left: 460px; 
-    width: 720px; 
-    height: 20px;
   }
 
   .image-container {
