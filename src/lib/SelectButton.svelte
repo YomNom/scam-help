@@ -1,6 +1,5 @@
 <script>
     import { createEventDispatcher } from 'svelte';
-    import { slide } from 'svelte/transition';
   
     export let buttonColor = '';
     export let isSelected = false;
@@ -27,7 +26,7 @@
       cursor: pointer;
       transition: background-color 0.25s, box-shadow 0.25s, transform 0.25s;
       outline: none;
-      color: #8d290a;
+      color: rgb(0, 55, 128);
       font-weight: 600;
       width: 100%;
       text-align: left;
