@@ -14,10 +14,12 @@
   let SSLshow = false;
   let showStop = false;
   let showView = false;
-  let openInfo = false;
   let donationAmount;
 
   function toggleSelection(index) {
+    if (selectedClue === 1) {
+      showPopup();
+    }
     if (selectedClue === index) {
       selectedClue = -1; // Deselect if the same button is clicked
     } else {
@@ -65,18 +67,6 @@
     
     <h1 style="color: #ee7d13;">CAN YOU SPOT A SCAM?</h1>
     <div class="info-row">
-      <div class="qr-column">
-        <h3 class="scam-title" style="margin-bottom=0px;">QUICK TIP</h3>
-        <p class="close-top">LOST CONTROL OF YOUR COMPUTER?</p>
-        <p class="close-top" style="text-align: left; padding: 5px;">
-          Immediately press and hold the power button to fully shutdown. 
-          Ignore any on-screen warnings telling you not to turn it off.
-        </p>
-        <!--
-        <p style="text-align: center; margin-top: -15px;">Scan the QR Code for Official Info When You've Been Scammed:</p>
-        <img src="/scammed-already-qr.png" alt="QR-help" class="qr-code">
-        -->
-      </div> <!-- qr-column -->
       <div class="intro">
         <h3 style="font-weight: bold; margin-bottom: 1px; margin-top: 5px;">
           Over the past year 2024, $12.5 billion was lost to online scams. 
@@ -90,7 +80,12 @@
           <button style="margin-top: 1px;">The Harvard Gazette - You'd never fall for an online scam, right?</button>
         </a>
       </div> <!-- intro -->
-      
+      <div class="help-column">
+        <h3 class="red-title" style="margin-bottom=0px;">TIP</h3>
+        <p class="close-top" style="color: #0a203d;">
+          VERIFY LINKS FROM BIG COMPANIES BY SEARCHING IT IN ANOTHER WINDOW
+        </p>
+      </div> 
       <div class="donate-bait">
         <h3 class="close-top">Help scam victims recover from devastating losses. Your support provides essential aid to those affected and helps them rebuild their lives.</h3>
         <button class="donate-amount" on:click={() => donationAmount = 1}>$1</button>
@@ -120,7 +115,7 @@
               <tr>
                 <td>
                   <SelectButton 
-                    buttonColor={'#ffe2d6'} 
+                    buttonColor={'#fdfcc2'} 
                     isSelected={selectedClue === index} 
                     on:slide={handleView}
                     onClick={() => toggleSelection(index)}
@@ -165,105 +160,58 @@
               </div>
             {/if}
 
-    <div class="content">
-      {#if !showView}
-        <div class="scam-checklist">
-          <h3 class = "scam-title" style="background-color: #fca452; text-align: center;">
-            Clues that a Website is a Scam
-          </h3>
-          <table class="scam-clues">
-            {#each buttonTexts as text, index}
-            <tr>
-              <td>
-                <SelectButton 
-                  buttonColor={'#fdfcc2'} 
-                  isSelected={selectedClue === index} 
-                  on:slide={handleView}
-                  onClick={() => toggleSelection(index)}
-                >
-                  {text}
-                </SelectButton>
-              </td>
-            </tr>
-          {/each}
-          </table>
-        </div> <!-- scam-checklist -->
-      {/if}
-      {#if showView}
-        <div class="scam-info"> 
-          
-          {#if selectedClue===0} <!-- URL Mispelling -->
-            <div class="container">
-              <div class="highlight-misspell"></div>
-              <h3 class = "scam-title" style="background-color: #e74d00;">
+            {#if selectedClue===1} <!-- Security Certificate (SSL) -->
+              {#if !SSLshow}
+                {showPopup()}
+              {/if}
+              
+              <h3 class = "scam-title" style="background-color: #e74d00; margin-bottom: 1px;">
+                {buttonTexts[selectedClue]}
+              </h3>
+              <div class="highlight-ssl"></div>
+              <ul>
+                <li>SSL is method that websites can use to by walling it off</li>
+                <li>Usually located to the left of the link as a symbol
+                  <ul>
+                    <li>Safe sites are commonly represented by a lock</li>
+                    <li>To the right, you can see the usual symbol used for unsafe sites</li>
+                  </ul>
+                </li>
+              </ul>
+            {/if}
+      
+            {#if selectedClue===2} <!-- Pressures you -->
+              <h3 class = "scam-title" style="background-color: #e74d00; margin-bottom: 1px;">
                 {buttonTexts[selectedClue]}
               </h3>
               <ul>
                 <li>
-                  Keep an eye out for even the smallest of misspellings, especially when 
-                  they replace letters with numbers or symbols.
-                  <ul>
-                    <li>Example: app1e</li>
-                  </ul>
+                  Repetition is a big weapon by online scams and even used by ads 
+                  to wear you down and more suspectible to their tactics. 
                 </li>
-                <li>Missing 's' in 'https'</li>
-                <li>Look at the end of the website name for anything extra after the website name</li>
-                <li>
-                  Suspiciously short links
+                <li>A big goal of their tactics is to make you panic and act fast, some 
+                    common ones are:
                   <ul>
-                    <li>bit.ly and tinyurl are infamous</li>
+                    <li>Timers</li>
+                    <li>Overload of Information</li>
+                    <li>Loud Noises</li>
+                    <li>Freezing your screen</li>
                   </ul>
                 </li>
               </ul>
-            </div>
-          {/if}
-
-          {#if selectedClue===1} <!-- Security Certificate (SSL) -->
-            {#if !SSLshow}
-              {showPopup()}
             {/if}
-            <h3 class = "scam-title" style="background-color: #e74d00; margin-bottom: 1px;">
-              {buttonTexts[selectedClue]}
-            </h3>
-            <div class="highlight-ssl"></div>
-            <ul>
-              <li>SSL is method that websites can use to by walling it off</li>
-              <li>Usually located to the left of the link as a symbol
-                <ul>
-                  <li>Safe sites are commonly represented by a lock</li>
-                  <li>To the right, you can see the usual symbol used for unsafe sites</li>
-                </ul>
-              </li>
-            </ul>
-          {/if}
-    
-          {#if selectedClue===2} <!-- Pressures you -->
-            <h3 class = "scam-title" style="background-color: #e74d00; margin-bottom: 1px;">
-              {buttonTexts[selectedClue]}
-            </h3>
-            <ul>
-              <li>
-                Repetition is a big weapon by online scams and even used by ads 
-                to wear you down and more suspectible to their tactics. 
-              </li>
-              <li>A big goal of their tactics is to make you panic and act fast, some 
-                  common ones are:
-                <ul>
-                  <li>Timers</li>
-                  <li>Overload of Information</li>
-                  <li>Loud Noises</li>
-                  <li>Freezing your screen</li>
-                </ul>
-              </li>
-            </ul>
-          {/if}
-        </div> <!-- scam-checklist -->
-        <button class="back-button" on:click={handleBack}>
-            <img src="/backButton.png" alt="back-icon" class="go-back">
-        </button>
-      {/if}
-      <div class="tips-base">
-        
+          </div> <!-- scam-checklist -->
+        {/if} <!-- showView -->
+        <div class="tip-column">
+          <h3 class="frame-title">QUICK FIX</h3>
+          <p class="close-top" style="text-align: left; color: orange;">COMPUTER FROZEN FROM SCAM?</p>
+          <p class="close-top" style="margin-top: 0px; padding: 5px;">
+            Immediately hold the power button until PC fully shuts down. 
+          </p>
+          <p class="close-top" style="margin-top: -10px; padding: 5px; color: #dc1111;">
+            IGNORE ANY MESSAGES ON SCREEN ASKING YOU NOT TO!!!
+          </p>
+        </div> <!-- tip-column -->
       </div>
       <div class="image-container">
         <img src="/FakeSite.jpeg" alt="Fake Site" class="fake-site-image">
@@ -279,9 +227,7 @@
           </button>
         {/if}
       </div> <!-- image-container -->
-      
     </div><!-- content -->
-    
   </div> <!-- main-column -->
 </main>
 
@@ -296,14 +242,15 @@
     margin-left: 20px;
   }
 
-  .qr-column {
+  .help-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 220px;
+    width: 150px;
     height: flex;
-    margin-right: 20px;
+    margin-right: 5px;
+    margin-left: 25px;
     color: #014c8a;
     border: 5px solid #e27610;
     font-weight: bold;
@@ -319,7 +266,6 @@
     text-align: left;
     width: 220px;
     height: flex;
-    top: 300px;
     margin-right: 20px;
     margin-top: 10px;
     background-color: rgb(255, 255, 255);
@@ -331,10 +277,7 @@
     transform: translateZ(-10px);
     position: relative;
     z-index: 1;
-  }
-
   .intro {
-    width: 500px;
     height: flex;
     background-color: #fdfb71;
     padding: 20px;
@@ -347,13 +290,6 @@
     font-size: 1.2em;
   }
 
-  .qr-code {
-    width: 100px;
-    height: auto;
-    margin-bottom: -20px;
-  }
-  
-
   .donate-bait {
     background-color: #f7faff;
     width: 400px;
@@ -361,7 +297,7 @@
     margin-left: 20px;
     border-radius: 10px;
     border: 1px solid #c4c4c4;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.3); 
     transform: translateZ(20px); 
     padding: 12px;
   }
@@ -396,7 +332,7 @@
   .scam-info {
     display: flex;
     flex-direction: column;
-    margin-right: 19px;
+    margin-right: 18px;
     margin-top: 10px;
     top: 460px;
     width: 280px;
@@ -488,10 +424,10 @@
     border: none;
     padding: 0;
     border-radius: 50%;
-    z-index: 1000;
+    cursor: pointer;
     position: absolute;
-    left: 280px;
-    top: 470px;
+    left: -50px;
+    top: 0px;
   }
 
   .go-back {

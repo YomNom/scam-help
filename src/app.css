@@ -1,11 +1,11 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Lexend Deca', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(248, 250, 228, 0.87);
-  background-color: #966701;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #035eb3;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,7 +18,7 @@ main {
   flex-direction: column;
   color: #014c8a;
   justify-content: flex-start;
-  background-color: #fdf6e4;
+  background-color: #dff8fc;
   align-items: center;
   height: 1250px;
   width: 100%;
@@ -57,6 +57,14 @@ li {
   margin-top: -1px;
   margin-bottom: 6px;
 }
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .row {
   flex-direction: row;
   margin-bottom: 10px;
@@ -124,24 +132,11 @@ li {
   border-radius: 5px; 
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Lexend Deca', sans-serif;
-  color: #014c8a;
-  justify-content: flex-start;
-  background-color: #dff8fc;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-}
-
 .main-column {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center children horizontally */
-  justify-content: center; /* Center children vertically */
+  align-items: center;
+  justify-content: center; 
   width: 100%;
 }
 
@@ -159,9 +154,25 @@ main {
   flex-direction: column;
 }
 
+.frame-title {
+  color: orange;
+  margin-top: 1px; 
+  border: 7px solid #ff8800;
+  border-radius: 10px; 
+  padding: 10px;
+}
+
 .scam-title {
   margin-top: 1px; 
   background-color: orange; 
+  color: white;
+  border-radius: 10px; 
+  padding: 10px;
+}
+
+.red-title {
+  margin-top: 1px; 
+  background-color: rgb(228, 73, 11); 
   color: white;
   border-radius: 10px; 
   padding: 10px;
