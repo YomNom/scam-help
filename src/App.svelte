@@ -115,7 +115,7 @@
               <tr>
                 <td>
                   <SelectButton 
-                    buttonColor={'#fdfcc2'} 
+                    buttonColor={'#ffe2d6'} 
                     isSelected={selectedClue === index} 
                     on:slide={handleView}
                     onClick={() => toggleSelection(index)}
