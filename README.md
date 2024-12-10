@@ -2,7 +2,7 @@
 With personal experience from working at Best Buy, I encountered many people who had fallen for online scams and needed a rundown on information about scams. This is a minimal information website made to help with that, focused on the older generation and people who need to help them.
 Although the page doesn't go into anything deep, the information is something everyone should keep in mind these days when interacting with anything online. As mentioned on the page, billions were lost the past year in 2024 to cybercrime. Scams are evolving and getting smarter and general information on how to look for them in layman terms and in a quick way is to help people keep track of that, but not everyone may know how to look for a scam. Many current websites that go over this information spread it out in large texts that many people don't want to bother slowing down and reading or throw out terms that not everyone may be familiar with unless that they grew up with it. Although I was mainly motivated by my experience as a geeksquad employee, that also motivated me to make this.
 
-![Screenshot 2024-12-09 192116](https://github.com/user-attachments/assets/d5171c62-8d69-4e36-b24e-de2299574ce1)
+https://github.com/user-attachments/assets/da10734b-8d18-43e8-92e6-20eeb7b8c4de
 
 # Components
 There are 4 features on this website. 
@@ -12,12 +12,16 @@ The big selling point of my site is the minimalistic feature. However, if people
 
 <img src="https://github.com/user-attachments/assets/be5eaa96-e638-4c72-a262-518c2ae596b7" alt="Screenshot 2024-12-09 194811" width="500"> 
 
+https://github.com/user-attachments/assets/8dd0abe8-66a5-489b-8da9-e86f48bc6aa8
+
 ## 2) Donation Bait
 First off, there is no official charity to donate to scam victims. At most, you might find some people on a charity website like gofundme, but there is no official organization to donate to. When you search it up, most of the results guid you to the Federal Trade Commission to give you instructions on what where to go and what to do if you've been scammed. I actually initially had a QR code that would lead you to one of those but I scrapped it because I wanted to mostly focus on the learning part of the website.
 
 This component is to simulate the scam of supposedly donating for a cause. No where does it say where the money goes it. Should you garner enough sympathy and donate, it will inform you to be wary and research if you're donating.
 
 ![Screenshot 2024-12-09 195237](https://github.com/user-attachments/assets/1dabd4d6-7829-42aa-8b5b-0c2f8a2574ca) ![image](https://github.com/user-attachments/assets/697ddaef-794a-4fe0-90d8-4921c9da672a)
+
+https://github.com/user-attachments/assets/be9f466c-ccb0-48ec-a23e-b09732823fc7
 
 ## 3) "Checklist" 
 This listed common features of a scam website and what most people looked out for on a website. I looked into a lot more websites then what I listed but these were two big ones. I kept the information very minimal with the theme of "checklist" and avoided using terms like domain to keep things simple. 
